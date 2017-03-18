@@ -29,6 +29,13 @@ Song.create!([
                  release_date: DateTime.new(1998, 1, 1, 11),
                  nomination: '',
                  artist: celeda
+               },
+               {
+                 title: 'Thinking out loud',
+                 album: 'x',
+                 release_date: DateTime.new(2014, 1, 1, 11),
+                 nomination: 'Grammy',
+                 artist: ed
                }
              ])
 
