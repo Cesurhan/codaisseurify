@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318152616) do
+ActiveRecord::Schema.define(version: 20170318164315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170318152616) do
     t.string   "title"
     t.string   "album"
     t.date     "release_date"
-    t.string   "nomination"
+    t.string   "award"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "artist_id"
