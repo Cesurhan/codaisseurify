@@ -13,19 +13,22 @@ Song.create!([
                  title: 'I see fire',
                  album: 'The Hobbit: The Desolation of Smaug',
                  release_date: DateTime.new(2013, 1, 1, 11),
-                 nomination: 'Grammy'
+                 nomination: 'Grammy',
+                 artist: ed
                },
                {
                  title: 'Elastic Heart',
                  album: 'The Hunger Games: Catching Fire',
                  release_date: DateTime.new(2013, 1, 1, 11),
-                 nomination: ''
+                 nomination: '',
+                 artist: sia
                },
                {
                  title: 'Music is the answer',
                  album: 'Tourism',
                  release_date: DateTime.new(1998, 1, 1, 11),
-                 nomination: ''
+                 nomination: '',
+                 artist: celeda
                }
              ])
 
