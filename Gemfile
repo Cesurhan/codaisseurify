@@ -63,3 +63,6 @@ end
 
 # Use Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.6'
+
+# Use CaarrierWave for image uploading
+gem 'carrierwave', '0.11.2'
