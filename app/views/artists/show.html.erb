@@ -1,7 +1,11 @@
 <h2>Artist Details:</h2>
 <hr>
-<% @photos.each do |photo| %>
-<%= image_tag photo.image if photo.artist.id == @artist.id  %>
+<% if @artist.photos.any? %>
+<% @artist.photos.each do |photo|%>
+<%= image_tag photo.image %>
+<%end%>
+<%else%>
+<p>This Artist has no picture</p>
 <%end%>
 <h3>
   <%= @artist.first_name%>
