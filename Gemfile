@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
@@ -66,3 +68,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 # Use CaarrierWave for image uploading
 gem 'carrierwave', '0.11.2'
+
+# Use Cloudinary for hosting images
+gem 'cloudinary', '1.2.3'
+
+# User twelve-factor-app for enabling serving assets in production
+gem 'rails_12factor', group: :production
