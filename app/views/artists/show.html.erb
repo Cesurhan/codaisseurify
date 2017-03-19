@@ -1,24 +1,29 @@
 <h2>Artist Details:</h2>
 <hr>
-<% if @artist.photos.any? %>
-<% @artist.photos.each do |photo|%>
-<%= image_tag photo.image %>
-<%end%>
-<%else%>
-<p>This Artist has no picture</p>
-<%end%>
-<h3>
-  <%= @artist.first_name%>
-  <%= @artist.last_name%>
-</h3>
-<ul>
-  <li>Age:<%= @artist.age%></li>
-  <li>Origin:<%= @artist.origin%></li>
-</ul>
-<h3>Songs:</h3>
-<% @artist.songs.each do |song|%>
-<ul>
-  <li><%=song.title%></li>
-</ul>
-<%end%>
-<%= link_to "Back", artists_path, class: "btn btn-default" %>
+<div class="col-md-6">
+  <% if @artist.photos.any? %>
+  <% @artist.photos.each do |photo|%>
+  <%= image_tag photo.image %>
+  <%end%>
+  <%else%>
+  <p>This Artist has no picture</p>
+  <%end%>
+</div>
+<div class="col-md-6">
+
+  <h3>
+    <%= @artist.first_name%>
+    <%= @artist.last_name%>
+  </h3>
+  <ul>
+    <li>Age:<%= @artist.age%></li>
+    <li>Origin:<%= @artist.origin%></li>
+  </ul>
+  <h3>Songs:</h3>
+  <% @artist.songs.each do |song|%>
+  <ul>
+    <li><%=song.title%></li>
+  </ul>
+  <%end%>
+  <%= link_to "Back", artists_path, class: "btn btn-default" %>
+</div>

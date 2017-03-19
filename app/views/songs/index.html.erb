@@ -1,7 +1,10 @@
-<h1>All Songs:</h1>
-<hr>
+<div class="container">
 
-<% @songs.each do |song| %>
-<h4>Title:
-  <%=link_to song.title, song%></h4><br/>
-<%end%>
+  <h1>All Songs:</h1>
+  <hr>
+
+  <% @songs.each do |song| %>
+  <h4>Title:
+    <%=link_to song.title, song%></h4><br/>
+  <%end%>
+</div>

@@ -1,13 +1,25 @@
 <h1>All Artists:</h1>
 <hr>
 
-<% @artists.each do |artist| %>
-<% if artist.photos.any?%>
-<% artist.photos.each do |photo| %>
-<%= image_tag photo.image%>
-<%end%>
-<%else%>
-<p>This Artist has no picture</p>
-<%end%>
-<h3><%= link_to "#{artist.first_name} #{artist.last_name}", artist %></h3>
-<%end%>
+<div class="row">
+  <% @artists.each do |artist| %>
+  <div class="col-sm-6 col-md-4">
+
+    <div class="thumbnail">
+      <% if artist.photos.any?%>
+      <% artist.photos.each do |photo| %>
+      <%= image_tag photo.image, style: 'width:50%'%>
+      <%end%>
+      <%else%>
+      <img
+        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhZTJiMGFjZWQgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWFlMmIwYWNlZCI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS40Ij4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+">
+      <%end%>
+      <div class="caption">
+        <h3><%="#{artist.first_name} #{artist.last_name}"%></h3>
+        <%= link_to "View", artist, class: "btn btn-info" %>
+      </div>
+    </div>
+
+  </div>
+  <%end%>
+</div>
