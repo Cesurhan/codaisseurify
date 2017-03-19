@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :artists
   resources :photos
+  resources :songs
 end

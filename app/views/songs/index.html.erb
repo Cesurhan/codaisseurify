@@ -1,0 +1,12 @@
+<h1>All Songs:</h1>
+<hr>
+
+<% @songs.each do |song| %>
+<ul>
+  <h4>Title:<%=song.title%></h4>
+  <li>Album:<%=song.album%></li>
+  <li>Release Date:<%=song.release_date%></li>
+  <li>Album:<%=song.album%></li>
+  <li>Award:<%=song.award%></li>
+</ul>
+<%end%>
