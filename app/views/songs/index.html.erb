@@ -2,11 +2,6 @@
 <hr>
 
 <% @songs.each do |song| %>
-<ul>
-  <h4>Title:<%=song.title%></h4>
-  <li>Album:<%=song.album%></li>
-  <li>Release Date:<%=song.release_date%></li>
-  <li>Album:<%=song.album%></li>
-  <li>Award:<%=song.award%></li>
-</ul>
+<h4>Title:
+  <%=link_to song.title, song%></h4><br/>
 <%end%>
