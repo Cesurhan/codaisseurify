@@ -1,10 +1,19 @@
 <div class="container">
 
-  <h1>All Songs:</h1>
-  <hr>
+  <%= render "songs/nav"%>
 
-  <% @songs.each do |song| %>
-  <h4>Title:
-    <%=link_to song.title, song%></h4><br/>
-  <%end%>
+  <div class="row">
+    <% @songs.each do |song| %>
+    <%= link_to song do %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Beats_Music_logo.svg" height="100" width="100">
+        <div class="caption text-center">
+          <h4><%=song.title%></h4>
+        </div>
+      </div>
+    </div>
+    <%end%>
+    <%end%>
+  </div>
 </div>

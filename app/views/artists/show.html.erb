@@ -1,29 +1,36 @@
-<h2>Artist Details:</h2>
-<hr>
-<div class="col-md-6">
-  <% if @artist.photos.any? %>
-  <% @artist.photos.each do |photo|%>
-  <%= image_tag photo.image %>
-  <%end%>
-  <%else%>
-  <p>This Artist has no picture</p>
-  <%end%>
-</div>
-<div class="col-md-6">
+<div class="container">
+  <%= render "artists/nav" %>
+  <div class="col-md-6">
+    <% if @artist.photos.any? %>
+    <% @artist.photos.each do |photo|%>
+    <%= image_tag photo.image %>
+    <%end%>
+    <%else%>
+    <p>This Artist has no picture</p>
+    <%end%>
+  </div>
+  <div class="col-md-6">
 
-  <h3>
-    <%= @artist.first_name%>
-    <%= @artist.last_name%>
-  </h3>
-  <ul>
-    <li>Age:<%= @artist.age%></li>
-    <li>Origin:<%= @artist.origin%></li>
-  </ul>
-  <h3>Songs:</h3>
-  <% @artist.songs.each do |song|%>
-  <ul>
-    <li><%=song.title%></li>
-  </ul>
-  <%end%>
-  <%= link_to "Back", artists_path, class: "btn btn-default" %>
+    <h3>
+      <%= @artist.first_name%>
+      <%= @artist.last_name%>
+    </h3>
+    <ul>
+      <li>
+        <b>Age:</b>
+        <%= @artist.age%></li>
+      <li>
+        <b>Origin:</b>
+        <%= @artist.origin%></li>
+    </ul>
+    <h3>Songs:</h3>
+    <% @artist.songs.each do |song|%>
+    <ul>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Beats_Music_logo.svg" height="20" width="20">
+      <%=song.title%>
+    </ul>
+    <%end%>
+    <hr>
+    <%= link_to "Back", artists_path, class: "btn btn-default" %>
+  </div>
 </div>

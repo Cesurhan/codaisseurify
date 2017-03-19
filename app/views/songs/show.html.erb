@@ -1,11 +1,21 @@
-<h2>Song Details:</h2>
-<hr>
-<ul>
-  <h4>Title:<%=@song.title%></h4>
-  <li>Artist:<%=@song.artist.full_name%></li>
-  <li>Album:<%=@song.album%></li>
-  <li>Release Date:<%=@song.release_date%></li>
-  <li>Album:<%=@song.album%></li>
-  <li>Award:<%=@song.award%></li>
-</ul>
-<%= link_to "Back", songs_path, class: "btn btn-info"%>
+<div class="container">
+
+  <h2><%=@song.title%>:</h2>
+  <hr>
+  <ul>
+    <li>
+      <b>Artist:</b>
+      <%=@song.artist.full_name%></li>
+    <li>
+      <b>Album:</b>
+      <%=@song.album%></li>
+    <li>
+      <b>Release Date:</b>
+      <%=@song.release_date%></li>
+    <li>
+      <b>Award:</b>
+      <%=@song.award%></li>
+  </ul>
+  <hr>
+  <%= link_to "Back", songs_path, class: "btn btn-info"%>
+</div>
