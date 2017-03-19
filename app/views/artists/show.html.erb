@@ -1,3 +1,8 @@
+<h2>Artist Details:</h2>
+<hr>
+<% @photos.each do |photo| %>
+<%= image_tag photo.image if photo.artist.id == @artist.id  %>
+<%end%>
 <h3>
   <%= @artist.first_name%>
   <%= @artist.last_name%>
