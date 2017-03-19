@@ -11,9 +11,14 @@
   <%= @artist.first_name%>
   <%= @artist.last_name%>
 </h3>
-<h4>
-  <p>Age:
-    <%= @artist.age%></p>
-  Origin:
-  <%= @artist.origin%>
-</h4>
+<ul>
+  <li>Age:<%= @artist.age%></li>
+  <li>Origin:<%= @artist.origin%></li>
+</ul>
+<h3>Songs:</h3>
+<% @artist.songs.each do |song|%>
+<ul>
+  <li><%=song.title%></li>
+</ul>
+<%end%>
+<%= link_to "Back", artists_path, class: "btn btn-default" %>
