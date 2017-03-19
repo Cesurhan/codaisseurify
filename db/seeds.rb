@@ -2,10 +2,15 @@ Photo.delete_all
 Song.delete_all
 Artist.delete_all
 
+# # Photos
+# photo1 = Photo.create!(remote_image_url: 'http://res.cloudinary.com/dr08wglx5/image/upload/v1489921746/440px-Ed_Sheeran_2013_yntsng.jpg')
+# photo2 = Photo.create!(remote_image_url: 'http://res.cloudinary.com/dr08wglx5/image/upload/v1489921811/440px-Sia_Seattle__28cropped_29_kswdnn.jpg')
+# photo3 = Photo.create!(remote_image_url: 'http://res.cloudinary.com/dr08wglx5/image/upload/v1489921848/300px-Danny_Tenaglia_cropped_ayl1jd.jpg')
+
 # Photos
-photo1 = Photo.create!(remote_image_url: 'http://res.cloudinary.com/dr08wglx5/image/upload/v1489921746/440px-Ed_Sheeran_2013_yntsng.jpg')
-photo2 = Photo.create!(remote_image_url: 'http://res.cloudinary.com/dr08wglx5/image/upload/v1489921811/440px-Sia_Seattle__28cropped_29_kswdnn.jpg')
-photo3 = Photo.create!(remote_image_url: 'http://res.cloudinary.com/dr08wglx5/image/upload/v1489921848/300px-Danny_Tenaglia_cropped_ayl1jd.jpg')
+photo1 = Photo.create!(image: 'http://res.cloudinary.com/dr08wglx5/image/upload/v1489921746/440px-Ed_Sheeran_2013_yntsng.jpg')
+photo2 = Photo.create!(image: 'http://res.cloudinary.com/dr08wglx5/image/upload/v1489921811/440px-Sia_Seattle__28cropped_29_kswdnn.jpg')
+photo3 = Photo.create!(image: 'http://res.cloudinary.com/dr08wglx5/image/upload/v1489921848/300px-Danny_Tenaglia_cropped_ayl1jd.jpg')
 
 puts "#{Photo.all.size} photos created"
 

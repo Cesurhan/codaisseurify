@@ -2,7 +2,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 end
 
-## To store files localy in "public" folder:
+# # To store files localy in "public" folder:
 # class ImageUploader < CarrierWave::Uploader::Base
 #   storage :file
 #
