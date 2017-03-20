@@ -1,37 +1,4 @@
 <div class="container">
-
   <%= render "songs/nav"%>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= form_for @song do |f|%>
-
-      <div class="form-group">
-        <%= f.label :title%>
-        <%= f.text_field :title,  :class => 'form-control', :placeholder => 'Title',  autocomplete: "off" %>
-      </div>
-
-      <div class="form_group">
-        <%= f.label :album %>
-        <%= f.text_field :album, :class => 'form-control', :placeholder => 'Album',  autocomplete: "off" %>
-      </div>
-
-      <div class="form_group">
-        <%= f.label :release_date %>
-        <%= f.date_field :release_date, :class => 'form-control', :placeholder => 'Release Date',  autocomplete: "off" %>
-      </div>
-
-      <div class="form_group">
-        <%= f.label :award %>
-        <%= f.text_field :award, :class => 'form-control', :placeholder => 'Award',  autocomplete: "off" %>
-      </div>
-      <hr>
-      <div class="actions">
-        <%= f.submit "Create", :class => "btn btn-primary" %>
-      </div>
-
-      <% end %>
-
-    </div>
-
+<%= render "shared/form"%>
   </div>
-</div>
