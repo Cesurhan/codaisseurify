@@ -7,4 +7,12 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @song = Song.new
   end
+
+  def destroy
+    @artist = Artist.find(params[:id])
+
+    @artist.destroy
+
+    redirect_to artists_path
+  end
 end
