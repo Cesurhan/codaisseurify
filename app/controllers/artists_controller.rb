@@ -13,6 +13,6 @@ class ArtistsController < ApplicationController
 
     @artist.destroy
 
-    redirect_to artists_path
+    redirect_to artists_path, notice: 'Artist deleted'
   end
 end

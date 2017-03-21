@@ -15,7 +15,7 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     if @song.save
-      redirect_to artists_path, notice: 'Song successfully created'
+      redirect_to artist_path(song_params[:artist_id]), notice: 'Song created'
     else
       render :new, notice: 'Please fill all the fields'
     end
@@ -26,7 +26,7 @@ class SongsController < ApplicationController
 
     @song.destroy
 
-    redirect_to artists_path
+    redirect_to artist_path(@song.artist_id), notice: 'Song deleted'
   end
 
   private
