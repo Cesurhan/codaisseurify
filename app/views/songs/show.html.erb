@@ -18,4 +18,5 @@
   </ul>
   <hr>
   <%= link_to "Back", songs_path, class: "btn btn-info"%>
+  <%= link_to "Delete", song_path(@song.id), :class => "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
 </div>
