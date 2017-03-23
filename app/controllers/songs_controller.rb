@@ -1,6 +1,8 @@
 class SongsController < ApplicationController
+  before_action :set_artist, only: [:index, :create, :destroy]
+
   def index
-    @songs = Song.all
+    @songs = @artist.songs
   end
 
   def show
@@ -9,27 +11,38 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
-    @artist = Artist.find(params[:id])
   end
 
   def create
-    @song = Song.new(song_params)
+    @song = @artist.songs.new(song_params)
+
     if @song.save
-      redirect_to artist_path(song_params[:artist_id]), notice: 'Song created'
+       redirect_to @artist, notice: "Song Added!"
     else
-      render :new, notice: 'Please fill all the fields'
+       redirect_to @artist, alert: "Song field can't be blank"
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   def destroy
-    @song = Song.find(params[:id])
-
-    @song.destroy
-
-    redirect_to artist_path(@song.artist_id), notice: 'Song deleted'
+    @song = @artist.songs.find(params[:id])
+    if @song.destroy
+      redirect_to @artist, notice: "Song deleted!"
+    else
+      redirect_to @artist, alert: "Song couldn't be deleted"
+    end
   end
 
   private
+
+  def set_artist
+    @artist = Artist.find(params[:artist_id])
+  end
 
   def song_params
     params.require(:song).permit(:title, :artist_id)
