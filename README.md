@@ -1,24 +1,56 @@
-# README
+# Codaisseurify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A rails app to create artists and albums. This app uses [Clouinary](http://cloudinary.com/).
 
-Things you may want to cover:
+<img width="1162" alt="screen shot 2017-05-05 at 16 46 54" src="https://cloud.githubusercontent.com/assets/15831300/25750812/2f7b1932-31b3-11e7-8613-a51f91c7d1b9.png">
 
-* Ruby version
+## Steps
 
-* System dependencies
+These are the steps I followed when working on this app:
 
-* Configuration
+1. Setting up project
+2. Adding RSpec, Bootstrap
+3. Generating models
+4. Adding seeds
+5. Adding views
+6. Adding Cloudinary
+7. Refactoring
 
-* Database creation
+## Database Structure
 
-* Database initialization
+1. Artist
+  
+  * first_name:string
+  * last_name:string
+  * age:integer
+  * origin:string
+  
+2. Song
 
-* How to run the test suite
+  * title:string
+  * album:string
+  * release_date:date
+  
+3. Photo
 
-* Services (job queues, cache servers, search engines, etc.)
+  * artist_id:integer(belongs_to :artist)
+  * image:string
+  
+## Running Locally
 
-* Deployment instructions
+Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bundler.io/) installed.
 
-* ...
+```bash
+git clone git@github.com:Cesurhan/codaisseurify.git
+cd codaisseurify
+bundle install
+rails db:create db:migrate db:seed
+rails server
+```
+
+## Related documentation
+
+For more information about using CarrierWave and Cloudinary, see these links:
+
+* [CarrierWave](https://github.com/carrierwaveuploader/carrierwave)
+* [Cloudinary](http://cloudinary.com/documentation/rails_integration#getting_started_guide)
