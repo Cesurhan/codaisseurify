@@ -1,6 +1,6 @@
 # Codaisseurify
 
-A rails app to create artists and albums. This app uses [Clouinary](http://cloudinary.com/).
+A rails app to create artists and albums. This app uses [Cloudinary](http://cloudinary.com/).
 
 <img width="1162" alt="screen shot 2017-05-05 at 16 46 54" src="https://cloud.githubusercontent.com/assets/15831300/25750812/2f7b1932-31b3-11e7-8613-a51f91c7d1b9.png">
 
